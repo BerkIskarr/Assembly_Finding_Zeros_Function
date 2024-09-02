@@ -69,7 +69,28 @@ Ensure that you have the necessary tools to assemble and run x86-64 assembly cod
 Use NASM to assemble the source file:
 
 ```bash
-nasm -f elf64 -o cramer.o cramer.asm
+nasm -f elf64 -o Find_Zeros.o Find_Zeros.asm
+```
+### Step 2: Link the Object File
+Link the object file to create the executable:
 
+```bash
+ld -o Find_Zeros Find_Zeros.o -lc -I /lib64/ld-linux-x86-64.so.2
+```
+### Step 3: Run the Program
+Execute the program:
+
+```bash
+./Find_Zeros
+```
+
+## Expected Output
+The program outputs the solutions x1 and x2 for the system of equations provided. If the determinant A0 is zero, indicating no unique solution, it outputs "No solution!".
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Acknowledgements
+This implementation is intended as an educational example of how to solve linear equations using assembly language and Cramer's Rule.
 
 
